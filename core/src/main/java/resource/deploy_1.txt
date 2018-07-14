@@ -1,0 +1,28 @@
+/*
+ * Created by David Lancioni 12/2015
+ * How to deploy TOMCAT as a service in linux
+ */
+Step 1: Copy files
+    Copy the scripts.sh to /etc/init.d
+    
+Step 2: Turn the files executable and owner by root:     
+    chown root script.sh
+    chmod 775 script.sh
+
+Step3: Install the job using command below:    
+    update-rc.d script.sh defaults
+
+Step 4: Start/Stop the service
+    service script.sh stop
+    service script.sh start
+
+
+/*
+ * Created by David Lancioni 12/2015
+ * How to deploy application' jobs  (CRON)
+ */
+Step 1: Edit cron table
+    crontab -e
+
+Step 2: Start the service on system reboot, just add the line below at the end of file
+    @reboot sh /opt/reconapp/reconapp.sh

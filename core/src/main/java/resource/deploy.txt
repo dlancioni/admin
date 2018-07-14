@@ -1,0 +1,25 @@
+/*
+ * INSTALL SERVER (TOMCAT)
+ */ 
+Install default JDK e JRE
+Install gzip
+Download tomcat (last version) via command line
+Create folder /opt/tomcat and unzip tomcat inside
+Change the file /opt/tomcat/bin/startup.sh, and define catalina_home and java_home:
+    clear
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+    export CATALINA_HOME=/opt/tomcat
+    Note: This command helps to figure out where java is: sudo update-alternatives --config java
+    Note: Recommended to update shutdown script adding a msg like "Tomcat stopped" at the end and a clear at the beggining
+
+Grant full recursive access to current user to folder /opt/tomcat (chmod 775 /opt/tomcat -R)
+
+/*
+ * INSTALL RECONAPP
+ */ 
+Create folder: /opt/reconapp/service
+Create folder: /opt/reconapp/files
+Create folder: /opt/reconapp/logs
+Take ownership to root: chown root /opt/reconapp -R
+Permission: chmod 775 /opt/reconapp -R
+Upload the contents of /home/david/developer/reconapp/service/dist/ folder to /opt/reconapp/service 
