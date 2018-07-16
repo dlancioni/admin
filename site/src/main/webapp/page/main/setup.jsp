@@ -37,6 +37,7 @@
         /*
          * Keep information related to culture
          */
+        String s = CBUSCore1.GetPropertieValue("COMPANY_LANGUAGE");
         session.setAttribute("language_code", CBUSCore1.GetPropertieValue("COMPANY_LANGUAGE"));
         session.setAttribute("country_code", CBUSCore1.GetPropertieValue("COMPANY_COUNTRY"));
 

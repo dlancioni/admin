@@ -4,7 +4,8 @@
     <groupId>br.com.dl.admin</groupId>
     <artifactId>core</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>jar</packaging> 
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -26,8 +27,8 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.2-1002-jdbc4</version>
-        </dependency>      
+            <version>42.1.4</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
