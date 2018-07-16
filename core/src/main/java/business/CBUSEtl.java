@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-import oracle.jdbc.OracleTypes;
+//import oracle.jdbc.OracleTypes;                                                   // Must figure out oracle driver
 import persistence.CDALCore;
 import persistence.CDALEtl;
 
@@ -966,7 +966,7 @@ public class CBUSEtl extends CBUS
              * Open the data source (procedure in this case)
              */            
             CallableStatement1 = Connection1.prepareCall(strSql);
-            CallableStatement1.registerOutParameter(1, OracleTypes.CURSOR);            
+            //CallableStatement1.registerOutParameter(1, OracleTypes.CURSOR);       // Must figure out oracle driver        
             CallableStatement1.execute();
             ResultSet1 = (ResultSet) CallableStatement1.getObject(1);          
 
