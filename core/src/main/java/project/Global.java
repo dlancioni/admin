@@ -1321,7 +1321,7 @@ public class Global
             /*
              * Load a properties file from class path, inside static method
              */           
-            Properties1.load(this.getClass().getResourceAsStream("/config/core.properties"));
+            Properties1.load(this.getClass().getResourceAsStream("/resource/core.properties"));
             
             /*
              * Get the property value and print it out

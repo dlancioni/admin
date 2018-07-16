@@ -20,6 +20,12 @@
             <groupId>br.com.dl.admin</groupId>
             <artifactId>core</artifactId>
             <version>1.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>          
         
         <dependency>
@@ -28,6 +34,12 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.1.4</version>
+        </dependency>        
         
     </dependencies>
 
