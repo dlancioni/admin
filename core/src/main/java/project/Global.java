@@ -26,7 +26,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class Global 
 {    
-    public final String SOLUTION_NAME = "Recon1";
+    public final String SOLUTION_NAME = "Admin Module";
     
     /*
      * Available sgdbs to connection
