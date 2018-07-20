@@ -48,7 +48,7 @@ public class Global
     public final int DOMAIN_USER = 2;    
     
     /*
-     * Constants related to system fields (Int) only
+     * Constants related to system fields
      */
     public final String SYSTEM_FIELD_ID = "_int_1";                                 // db field - cannot be used to save information in any table
     public final String SYSTEM_FIELD_ID_COMPANY = "_int_2";                         // db field - cannot be used to save information in any table
