@@ -4,6 +4,7 @@ import connection.ConnectionFactory;
 import entity.CENTData;
 import java.util.Date;
 import entity.CENTException;
+import entity.CENTField;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -2220,33 +2221,27 @@ public class CDAL extends project.Global
                     strWhere += " and " + strTableBase + "." + sf(SYSTEM_FIELD_MATCH_ID_STATUS) + " = " + this.PrepareNumber(CENTData1.GetInt(SYSTEM_FIELD_MATCH_ID_STATUS)) + lb;
                 }                
                 
-                for (int i=1; i<= TABLE_FIELD_COUNT; i++)
-                {
-                    if (CENTData1.GetInt(i) != Integer.MIN_VALUE)
+                for (CENTField CENTField1: CENTData1.GetListOfField())
+                {                    
+                    switch (CENTField1.getFieldType())
                     {
-                        strWhere += "and " + strTableBase + (".int_" + i) + " = " + CENTData1.GetInt(i) + lb;
+                        case TYPE_INT:
+                            strWhere += "and " + strTableBase + "." + (CENTField1.getFieldObject()) + " = " + CENTData1.GetInt(CENTField1.getFieldObject()) + lb;
+                            break;
+                        case TYPE_TEXT:
+                            strWhere += "and " + strTableBase + "." + CENTField1.getFieldObject() + " like " + this.PrepareString(CENTData1.GetText(CENTField1.getFieldObject())) + lb;
+                            break;
+                        case TYPE_DOUBLE:
+                            strWhere += "and " + strTableBase + "." + CENTField1.getFieldObject() + " = " + CENTData1.GetDouble(CENTField1.getFieldObject()) + lb;
+                            break;
+                        case TYPE_DATE:
+                            strWhere += "and " + strTableBase + "." + CENTField1.getFieldObject() + " = " + this.PrepareDate(CENTData1.GetDate(CENTField1.getFieldObject())) + lb;
+                            break;                            
+                        case TYPE_BOOLEAN:
+                            strWhere += "and " + strTableBase + "." + CENTField1.getFieldObject() + " = " + CENTData1.GetBoolean(CENTField1.getFieldObject()) + lb;
+                            break;                            
                     }
-
-                    if (!CENTData1.GetText(i).equals(""))
-                    {
-                        strWhere += "and " + strTableBase + ".text_" + i + " like " + this.PrepareString(CENTData1.GetText(i)) + lb;
-                    }
-
-                    if (CENTData1.GetDate(i) != null)
-                    {
-                        strWhere += "and " + strTableBase + ".date_" + i + " = " + this.PrepareDate(CENTData1.GetDate(i)) + lb;
-                    }
-
-                    if (CENTData1.GetDouble(i) != Double.MIN_VALUE)
-                    {
-                        strWhere += "and " + strTableBase + ".double_" + i + " = " + CENTData1.GetDouble(i) + lb;
-                    }
-
-                    if (CENTData1.GetBoolean(i) != Null)
-                    {
-                        strWhere += "and " + strTableBase + ".boolean_" + i + " = " + CENTData1.GetBoolean(i) + lb;
-                    }
-                }
+                }                
             }            
 
             /*
@@ -2264,8 +2259,7 @@ public class CDAL extends project.Global
                                 
             /*
              * Finalize
-             */           
-            
+             */            
             strSql = Select();
             
             switch (intIdSqlPart)
@@ -2511,42 +2505,38 @@ public class CDAL extends project.Global
             {
                 if (this.GetSession().GetInt(SESSION_AREA) != AREA_IT)
                 {
-                    if (this.GetSession().GetInt(SESSION_AREA) != Integer.MIN_VALUE) // Occurs on login
+                    if (this.GetSession().GetInt(SESSION_AREA) != 0) // Occurs on login
                     {
                         strWhere += "and (" + "tb_1" + "." + sf(SYSTEM_FIELD_ID_AREA) + " = " + this.GetSession().GetInt(SESSION_AREA) + " or " + "tb_1" +  "." + sf(SYSTEM_FIELD_ID_AREA) + " = " + AREA_IT + ")" + lb;
                     }        
                 }
             }
             
-            
+            /*
+             * Prepare the filter according to the info comming from screen
+             */            
             if (CENTData1 != null)
-            {
-                for (int i=1; i<= TABLE_FIELD_COUNT; i++)
-                {
-                    if (CENTData1.GetInt(i) != Integer.MIN_VALUE)
+            {                
+                for (CENTField CENTField1: CENTData1.GetListOfField())
+                {                    
+                    switch (CENTField1.getFieldType())
                     {
-                        strWhere += " and tb_1." + ("int_" + i) + " = " + this.PrepareNumber(CENTData1.GetInt(i)) + lb;
+                        case TYPE_INT:
+                            strWhere += " and tb_1." + (CENTField1.getFieldObject()) + " = " + this.PrepareNumber(CENTData1.GetInt(CENTField1.getFieldObject())) + lb;
+                            break;
+                        case TYPE_TEXT:
+                            strWhere += " and tb_1." + (CENTField1.getFieldObject()) + " = " + this.PrepareString(CENTData1.GetText(CENTField1.getFieldObject())) + lb;
+                            break;
+                        case TYPE_DOUBLE:
+                            strWhere += " and tb_1." + (CENTField1.getFieldObject()) + " = " + this.PrepareNumber(CENTData1.GetDouble(CENTField1.getFieldObject())) + lb;
+                            break;
+                        case TYPE_DATE:
+                            strWhere += " and tb_1." + (CENTField1.getFieldObject()) + " = " + this.PrepareDate(CENTData1.GetDate(CENTField1.getFieldObject())) + lb;
+                            break;                            
+                        case TYPE_BOOLEAN:
+                            strWhere += " and tb_1." + (CENTField1.getFieldObject()) + " = " + this.PrepareNumber(CENTData1.GetBoolean(CENTField1.getFieldObject())) + lb;
+                            break;                            
                     }
-
-                    if (!CENTData1.GetText(i).equals(""))
-                    {
-                        strWhere += " and tb_1." + ("text_" + i) + " = " + this.PrepareString(CENTData1.GetText(i)) + lb;
-                    }                
-
-                    if (CENTData1.GetDate(i) != null)
-                    {
-                        strWhere += " and tb_1." + ("date_" + i) + " = " + this.PrepareDate(CENTData1.GetDate(i)) + lb;
-                    }                
-
-                    if (CENTData1.GetDouble(i) != Double.MIN_VALUE)
-                    {
-                        strWhere += " and tb_1." + ("double_" + i) + " = " + this.PrepareNumber(CENTData1.GetDouble(i)) + lb;
-                    }            
-
-                    if (CENTData1.GetBoolean(i) != Null)
-                    {
-                        strWhere += " and tb_1." + ("boolean_" + i) + " = " + CENTData1.GetBoolean(i) + lb;
-                    }                
                 }
             }
             

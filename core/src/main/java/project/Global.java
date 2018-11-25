@@ -340,12 +340,6 @@ public class Global
     public final int TYPE_DATE = 3;
     public final int TYPE_DOUBLE = 4;
     public final int TYPE_BOOLEAN = 5;
-
-    /*
-     * Used to control the tables and field creation
-     */        
-    //public final int TABLE_COUNT = 50;
-    public final int TABLE_FIELD_COUNT = 20;
         
     /*
      * Used when accessing the base catalog

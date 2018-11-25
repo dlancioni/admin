@@ -84,7 +84,7 @@ public class CDALSetup extends CDAL
                 /*
                  * Mapping fields
                  */                                
-                for (int j=1; j<=TABLE_FIELD_COUNT; j++)
+                for (int j=1; j<=20; j++)
                 {
                     strSql += "int_" + j + " int," + lb;
                     strSql += "text_" + j + " varchar(500)," + lb;
@@ -96,7 +96,7 @@ public class CDALSetup extends CDAL
                 /*
                  * System fields
                  */                                
-                for (int j=1; j<=TABLE_FIELD_COUNT; j++)
+                for (int j=1; j<=20; j++)
                 {
                     strSql += sf("_int_" + j) + " int," + lb;
                     strSql += sf("_text_" + j) + " varchar(500)," + lb;
@@ -161,7 +161,7 @@ public class CDALSetup extends CDAL
                 /*
                  * Mapping fields
                  */                                
-                for (int j=1; j<=TABLE_FIELD_COUNT; j++)
+                for (int j=1; j<=20; j++)
                 {
                     strSql += "int_" + j + " int," + lb;
                     strSql += "text_" + j + " varchar(500)," + lb;
@@ -173,7 +173,7 @@ public class CDALSetup extends CDAL
                 /*
                  * System fields
                  */                                
-                for (int j=1; j<=TABLE_FIELD_COUNT; j++)
+                for (int j=1; j<=20; j++)
                 {
                     strSql += sf("_int_" + j) + " int," + lb;
                     strSql += sf("_text_" + j) + " varchar(500)," + lb;

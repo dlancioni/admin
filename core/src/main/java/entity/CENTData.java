@@ -46,7 +46,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {            
-            CENTField1.setFieldName("int_" + intId);
+            CENTField1.setFieldObject("int_" + intId);
             CENTField1.setFieldType(TYPE_INT);
             CENTField1.setFieldValueInt(intValue);            
             this.GetListOfField().add(CENTField1);
@@ -70,7 +70,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName(strFieldName);
+            CENTField1.setFieldObject(strFieldName);
             CENTField1.setFieldType(TYPE_INT);
             CENTField1.setFieldValueInt(intValue);            
             this.GetListOfField().add(CENTField1);
@@ -96,7 +96,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals("int_" + intId))
+                if (field.getFieldObject().equals("int_" + intId))
                 {
                     value = field.getFieldValueInt();
                     break;
@@ -122,7 +122,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals(strFieldName.trim().toLowerCase()))
+                if (field.getFieldObject().equals(strFieldName.trim().toLowerCase()))
                 {
                     value = field.getFieldValueInt();
                     break;
@@ -149,7 +149,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName("text_" + intId);
+            CENTField1.setFieldObject("text_" + intId);
             CENTField1.setFieldType(TYPE_TEXT);
             CENTField1.setFieldValueText(strValue);            
             this.GetListOfField().add(CENTField1);               
@@ -173,7 +173,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {           
-            CENTField1.setFieldName(strFieldName);
+            CENTField1.setFieldObject(strFieldName);
             CENTField1.setFieldType(TYPE_TEXT);
             CENTField1.setFieldValueText(strValue);            
             this.GetListOfField().add(CENTField1);     
@@ -199,7 +199,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals("text_" + intId))
+                if (field.getFieldObject().equals("text_" + intId))
                 {
                     value = field.getFieldValueText();
                     break;
@@ -225,7 +225,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals(strFieldName.trim().toLowerCase()))
+                if (field.getFieldObject().equals(strFieldName.trim().toLowerCase()))
                 {
                     value = field.getFieldValueText();
                     break;
@@ -253,7 +253,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName("date_" + intId);
+            CENTField1.setFieldObject("date_" + intId);
             CENTField1.setFieldType(TYPE_DATE);
             CENTField1.setFieldValueDate(datValue);
             this.GetListOfField().add(CENTField1);               
@@ -277,7 +277,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {           
-            CENTField1.setFieldName(strFieldName);
+            CENTField1.setFieldObject(strFieldName);
             CENTField1.setFieldType(TYPE_DATE);
             CENTField1.setFieldValueDate(datValue);            
             this.GetListOfField().add(CENTField1);     
@@ -303,7 +303,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals("date_" + intId))
+                if (field.getFieldObject().equals("date_" + intId))
                 {
                     value = field.getFieldValueDate();
                     break;
@@ -329,7 +329,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals(strFieldName.trim().toLowerCase()))
+                if (field.getFieldObject().equals(strFieldName.trim().toLowerCase()))
                 {
                     value = field.getFieldValueDate();
                     break;
@@ -356,7 +356,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName("double_" + intId);
+            CENTField1.setFieldObject("double_" + intId);
             CENTField1.setFieldType(TYPE_DOUBLE);
             CENTField1.setFieldValueDouble(dblValue);
             this.GetListOfField().add(CENTField1);           
@@ -380,7 +380,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName(strFieldName);
+            CENTField1.setFieldObject(strFieldName);
             CENTField1.setFieldType(TYPE_DOUBLE);
             CENTField1.setFieldValueDouble(dblValue);
             this.GetListOfField().add(CENTField1);           
@@ -406,7 +406,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals("double_" + intId))
+                if (field.getFieldObject().equals("double_" + intId))
                 {
                     value = field.getFieldValueDouble();
                     break;
@@ -432,7 +432,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals(strFieldName.trim().toLowerCase()))
+                if (field.getFieldObject().equals(strFieldName.trim().toLowerCase()))
                 {
                     value = field.getFieldValueDouble();
                     break;
@@ -459,7 +459,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {            
-            CENTField1.setFieldName("boolean_" + intId);
+            CENTField1.setFieldObject("boolean_" + intId);
             CENTField1.setFieldType(TYPE_BOOLEAN);
             CENTField1.setFieldValueBoolean(intValue);            
             this.GetListOfField().add(CENTField1);
@@ -483,7 +483,7 @@ public class CENTData extends CENT implements Cloneable
          
         try
         {
-            CENTField1.setFieldName(strFieldName);
+            CENTField1.setFieldObject(strFieldName);
             CENTField1.setFieldType(TYPE_BOOLEAN);
             CENTField1.setFieldValueBoolean(intValue);            
             this.GetListOfField().add(CENTField1);
@@ -509,7 +509,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals("boolean_" + intId))
+                if (field.getFieldObject().equals("boolean_" + intId))
                 {
                     value = field.getFieldValueBoolean();
                     break;
@@ -535,7 +535,7 @@ public class CENTData extends CENT implements Cloneable
         {
             for (CENTField field : this.GetListOfField())
             {
-                if (field.getFieldName().equals(strFieldName.trim().toLowerCase()))
+                if (field.getFieldObject().equals(strFieldName.trim().toLowerCase()))
                 {
                     value = field.getFieldValueBoolean();
                     break;

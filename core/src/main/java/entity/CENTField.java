@@ -14,7 +14,7 @@ import java.util.Date;
 public class CENTField 
 {
     
-    private String fieldName = "";
+    private String fieldObject = "";
     private int fieldType = 0;
     
     private String fieldValueText = "";
@@ -26,15 +26,15 @@ public class CENTField
     /**
      * @return the fieldName
      */
-    public String getFieldName() {
-        return fieldName.trim().toLowerCase();
+    public String getFieldObject() {
+        return fieldObject.trim().toLowerCase();
     }
 
     /**
      * @param fieldName the fieldName to set
      */
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
+    public void setFieldObject(String fieldName) {
+        this.fieldObject = fieldName;
     }
 
     /**

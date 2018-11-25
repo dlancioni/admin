@@ -1534,7 +1534,7 @@ public class CBUSEtl extends CBUS
             {
                 strText = "";
                 
-                for (i=3; i<=TABLE_FIELD_COUNT; i++) // Position 1 and 2 are reserved for destination field (see ApplyLayoutFunction function)
+                for (i=3; i<=CENTFieldJoin1.GetListOfField().size(); i++) // Position 1 and 2 are reserved for destination field (see ApplyLayoutFunction function)
                 {
                     /*
                      * Concatenate the values
