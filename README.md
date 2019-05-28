@@ -1,2 +1,2 @@
-# admin
-Base project to manage system administration
+# reconapp
+This was my first full web application coded in java using "old style" programming techniques. Besides bad things like jsp refreshs, I could enjoy moments coding database related routines over pure JDBC driver, multi-threaded routines and many functionalities on java core. While using things like spring or hibernate may speed-up things, working on core things let us learn in details how certain things works. Nowadays I am kind of retired from Java and having a lot of fun with node and npm.
